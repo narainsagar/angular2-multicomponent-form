@@ -1,5 +1,9 @@
 <p>This is step2.</p>
 
+<div class="progress">
+  <div class="progress-bar" [ngStyle]="{'width': progress+'%'}"></div>
+</div>
+
 <form [ngFormModel]="step2">
    <form-field [field]="fm.getField('input_dependants')"></form-field>
 

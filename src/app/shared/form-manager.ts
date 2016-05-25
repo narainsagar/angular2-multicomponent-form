@@ -39,7 +39,6 @@ export class FormManager {
       section.fields.forEach(field => {
         if(field.name === name) {
           search.push(field);
-          console
           let control: ControlGroup = <ControlGroup> this.mainForm.controls[section.section];
           search.push(control.controls[name]);
         }
