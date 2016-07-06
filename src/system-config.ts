@@ -18,6 +18,7 @@ const barrels: string[] = [
   '@angular/core',
   '@angular/common',
   '@angular/compiler',
+  '@angular/forms',
   '@angular/http',
   '@angular/router',
   '@angular/platform-browser',
@@ -25,6 +26,7 @@ const barrels: string[] = [
 
   // Thirdparty barrels.
   'rxjs',
+  'ng2-bootstrap',  
 
   // App specific barrels.
   'app',
@@ -47,6 +49,8 @@ declare var System: any;
 System.config({
   map: {
     '@angular': 'vendor/@angular',
+    'moment': 'vendor/moment/moment.js',
+    'ng2-bootstrap': 'vendor/ng2-bootstrap',
     'rxjs': 'vendor/rxjs',
     'main': 'main.js'
   },

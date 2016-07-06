@@ -1,8 +1,12 @@
+import { Validator } from './validator';
+import { Tooltip } from './tooltip';
+
 export class FormField {
-   constructor(
+    constructor(
        public name: string,      
        public label: string, 
-       public defaultValue: string = '') {}  
+       public defaultValue: string = '',
+       public validations: Validator[] = []) {}  
 }
 
 export class TextFormField extends FormField {
@@ -13,8 +17,10 @@ export class TextFormField extends FormField {
        public name: string,      
        public label: string, 
        public defaultValue: string = '',
-       public placeholder: string = '') {
-        super(name, label, defaultValue);
+       public placeholder: string = '',
+       public validations: Validator[] = [],
+       public tooltip: Tooltip = null) {
+        super(name, label, defaultValue, validations);
     }
     
 }
@@ -27,8 +33,42 @@ export class SelectFormField extends FormField {
        public name: string,
        public options: Array<string>,      
        public label: string, 
-       public defaultValue: string = '') {
-        super(name, label, defaultValue);
+       public defaultValue: string = '',
+       public validations: Validator[] = [],
+       public tooltip: Tooltip = null) {
+        super(name, label, defaultValue, validations);
     }
     
+}
+
+export class NumberFormField extends FormField {
+    
+    public type: string = 'number';
+    
+    constructor(
+       public name: string,
+       public label: string,
+       public min: string = '', 
+       public defaultValue: string = '0',
+       public validations: Validator[] = [],
+       public tooltip: Tooltip = null) {
+      super(name, label, defaultValue, validations);
+    }
+
+}
+
+export class RadioFormField extends FormField {
+    
+    public type: string = 'radio';
+    
+    constructor(
+       public name: string,
+       public label: string,
+       public options: Array<string>,
+       public defaultValue: string = '',
+       public validations: Validator[] = [],
+       public tooltip: Tooltip = null) {
+      super(name, label, defaultValue, validations);
+    }
+
 }
