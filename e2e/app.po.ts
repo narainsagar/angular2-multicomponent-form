@@ -1,11 +1,11 @@
-export class Angular2MulticomponentFormPage {
-  
-  navigateTo(route: string = '/') {
-    return browser.get(route);
+import { browser, element, by } from 'protractor';
+
+export class ComponentMigrationPage {
+  navigateTo() {
+    return browser.get('/');
   }
 
   getParagraphText() {
-    return element(by.css('angular2-multicomponent-form-app h3')).getText();
+    return element(by.css('app-root h1')).getText();
   }
-
 }
